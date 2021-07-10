@@ -71,6 +71,7 @@ namespace ToDoList.Controllers
             }
             else
             {
+                ModelState.AddModelError("", "This form contains errors.");
                 ViewBag.Categories = context.Categories.ToList();
                 ViewBag.Statuses = context.Statuses.ToList();
                 return View(task);
