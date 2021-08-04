@@ -1,5 +1,6 @@
 ﻿@model ToDo
 
+
 <h2>New Task</h2>
 <style>
     .input-validation-error {
@@ -46,6 +47,7 @@
                 asp-items="@(new SelectList(ViewBag.Statuses,"StatusId", "Name"))">
             <option value=""></option>
         </select>
+        
     </div>
     <div class="col-sm-6">
         <span asp-validation-for="StatusId" class="text-danger"></span>
@@ -53,6 +55,6 @@
 
     <br />
 
-    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit">Add</button>
     <a asp-action="Index" class="btn btn-primary">Cancel</a>
 </form>

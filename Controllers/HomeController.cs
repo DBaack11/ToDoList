@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Nest;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,7 +13,10 @@ namespace ToDoList.Controllers
 {
     public class HomeController : Controller
     {
+       
         private ToDoContext context;
+
+        
         public HomeController(ToDoContext ctx) => context = ctx;
 
         public IActionResult Index(string id)

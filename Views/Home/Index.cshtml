@@ -7,7 +7,7 @@
     <div class="col-sm-2">
         <form asp-action="Filter" method="post">
             <div class="form-group">
-                <label>Category: </label>
+                <label>Category <span class="btn btn-outline-primary">@(new SelectList(ViewBag.Categories).Count())</span></label>
                 <select name="filter" class="form-control"
                         asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "Name", ViewBag.Filters.CategoryId))">
                     <option value="all">All</option>
@@ -16,7 +16,7 @@
             </div>
 
             <div class="form-group">
-                <label>Due: </label>
+                <label>Due <span class="btn btn-outline-primary">@(new SelectList(ViewBag.DueFilters).Count())</span></label>
                 <select name="filter" class="form-control"
                         asp-items="@(new SelectList(ViewBag.DueFilters, "Key", "Value", ViewBag.Filters.Due))">
                     <option value="all">All</option>
@@ -25,7 +25,7 @@
             </div>
 
             <div class="form-group">
-                <label>Status: </label>
+                <label>Status <span class="btn btn-outline-primary"><vc:status-view-component>@(new SelectList(ViewBag.Statuses).Count())</vc:status-view-component></span></label>
                 <select name="filter" class="form-control"
                         asp-items="@(new SelectList(ViewBag.Statuses, "StatusId", "Name", ViewBag.Filters.StatusId))">
                     <option value="all">All</option>
